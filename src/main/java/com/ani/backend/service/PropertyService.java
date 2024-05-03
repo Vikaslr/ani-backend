@@ -18,11 +18,11 @@ public class PropertyService {
         return propertyRepository.findAll();
     }
 
-    public Property updatePropertyPrice(Long id, double newPrice) {
-        Property property = propertyRepository.findById(id)
+    public Property updatePropertyPrice(Long property_id, double new_Price) {
+        Property property = propertyRepository.findById(property_id)
             .orElseThrow(() -> new NoSuchElementException("Property not found"));
         
-        property.setPrice(newPrice);
+        property.setPrice(new_Price);
         return propertyRepository.save(property);
     }
 }

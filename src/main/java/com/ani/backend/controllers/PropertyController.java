@@ -3,12 +3,7 @@ package com.ani.backend.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.ani.backend.dao.Property;
 import com.ani.backend.service.PropertyService;
@@ -24,9 +19,9 @@ public class PropertyController {
         return propertyService.getAllProperties();
     }
 
-    @PutMapping("/{id}/price")
-    public Property updatePropertyPrice(@PathVariable Long id, @RequestParam double newPrice) {
-        return propertyService.updatePropertyPrice(id, newPrice);
+    @PutMapping("/{property_id}/price")
+    public Property updatePropertyPrice(@PathVariable Long property_id, @RequestParam double new_Price) {
+        return propertyService.updatePropertyPrice(property_id, new_Price);
     }
 }
 

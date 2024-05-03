@@ -12,16 +12,17 @@ public class Property {
     private Long id;
 
     @SuppressWarnings("unused")
-    private String name;
+    private long property_id;
 
-    private double price;
+    private double property_price;
 
-    public double getPrice() {
-        return price;
-    }
+    private double new_Price;
+    
+    private String last_updated;
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrice(double new_Price) {
+       
+        throw new UnsupportedOperationException("Unimplemented method 'setPrice'");
     }
 
    

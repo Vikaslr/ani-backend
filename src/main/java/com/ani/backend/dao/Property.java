@@ -20,10 +20,7 @@ public class Property {
     
     private String last_updated;
 
-    public void setPrice(double new_Price) {
-       
-        throw new UnsupportedOperationException("Unimplemented method 'setPrice'");
-    }
+
 
    
 }

@@ -1,16 +1,17 @@
-package com.ani.backend.controllers;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+package com.ani.backend.controllers;// PropertyController.java
 
 import com.ani.backend.dao.Property;
 import com.ani.backend.service.PropertyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/properties")
 public class PropertyController {
+
     @Autowired
     private PropertyService propertyService;
 
@@ -19,9 +20,9 @@ public class PropertyController {
         return propertyService.getAllProperties();
     }
 
-    @PutMapping("/{property_id}/price")
-    public Property updatePropertyPrice(@PathVariable Long property_id, @RequestParam double new_Price) {
-        return propertyService.updatePropertyPrice(property_id, new_Price);
+    @PutMapping("/{propertyId}/price")
+    public ResponseEntity<String> updatePropertyPrice(@PathVariable("propertyId") Long propertyId, @RequestParam("newPrice") double newPrice) {
+        propertyService.updatePropertyPrice(propertyId, newPrice);
+        return ResponseEntity.ok("Property price updated successfully");
     }
 }
-
